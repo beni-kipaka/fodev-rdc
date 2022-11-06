@@ -18,6 +18,7 @@
     --container-width-lg: 74%;
     --container-width-md: 88%;
     --form-width: 40%;
+    --form-width-md: 88%;
 
     --card-border-radius-1: 0.3rem;
     --card-border-radius-2: 0.5rem;
@@ -43,6 +44,7 @@
 body{
     line-height: 1.6;
     color: var(--color-gray-200);
+    overflow-x: hidden;
     background: var(--color-bg);
     font-size: 0.9rem;
 }
@@ -344,6 +346,166 @@ footer ul a:hover{
 
 
 
+/* ===== SEARCH PART ===== */
+.search__bar{
+    margin-top: 7rem;
+}
+
+.search__bar-container{
+    position: relative;
+    width: 30rem;
+    background: var(--color-gray-900);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.6rem 1rem;
+    border-radius: var(--card-border-radius-2);
+    color: var(--color-gray-300);
+}
+
+.search__bar-container > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search__bar input{
+    background: transparent;
+    margin-left: 0.7rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    border: none;
+}
+
+.search__bar input::placeholder{
+    color: var(--color-gray-300);
+}
+
+/* ===== BUTTON PART ===== */
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6em 1.2rem;
+    background-color: var(--color-primary);
+    border-radius: var(--card-border-radius-2);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--color-white);
+    border: 0;
+}
+
+
+
+
+/* ===== SINGLE POST ===== */
+.singlepost{
+    margin: 6rem 0 2rem;
+}
+
+.singlepost__container{
+    width: var(--form-width);
+    background: var(--color-gray-900);
+    padding: 1rem 2rem 3rem;
+}
+
+.singlepost__thumbnail{
+    margin: 1.5rem 0 1rem;
+}
+
+.singlepost__container p{
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+
+
+
+
+/* ===== CATEGORY POSTS ===== */
+.category__title{
+    height: 15rem;
+    margin-top: 4.5rem;
+    background: var(--color-gray-900);
+    display: grid;
+    place-items: center;
+}
+
+
+
+/* ===== EMPTY PAGE ===== */
+.empty__page{
+    height: 70vh;
+    display: grid;
+    place-content: center;
+}
+
+
+
+
+/* ===== GENERAL FORM ===== */
+.form__section{
+    display: grid;
+    place-items: centre;
+    height: 100vh;
+}
+
+.form__section-container{
+    width: var(--form-width);
+}
+
+.alert__message{
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--card-border-radius-2);
+}
+
+.alert__message.error{
+    background: var(--color-red-light);
+    color: var(--color-red);
+}
+
+.alert__message.success{
+    background: var(--color-green-light);
+    color: var(--color-green);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form__control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+input, textarea, select{
+    padding: 0.8rem 1.4rem;
+    background: var(--color-gray-900);
+    border-radius: var(--card-border-radius-2);
+    resize: none;
+    color: var(--color-white);
+    border: none;
+}
+
+.form__section small{
+    margin-top: 1rem;
+    display: block;
+}
+
+.form__section small a{
+    color: var(--color-primary);
+}
+
+
+
+
+
+
+
+
 /* Medias Queries Medium Devices */
 @media screen and (max-width: 1024px) {
 
@@ -427,9 +589,7 @@ footer ul a:hover{
         animation-delay: 800ms;
     }
 
-    .nav__items li:nth-child(6) {
-        animation-delay: 1000ms;
-    }
+
 
     /* ===== Nav Dropdown animation */
     @keyframes animateDropdown {
@@ -441,11 +601,6 @@ footer ul a:hover{
             opacity: 1;
         }
     }
-
-
-
-
-
 
     .nav__items li a{
         border-radius: 0;
@@ -483,7 +638,19 @@ footer ul a:hover{
     .footer__container{
         grid-template-columns: 1fr 1fr;
     }
+
+    /* ========== BLOG =========== */
+    .search__bar-container{
+        width: var(--container-width-md);
+    }
+
+    /* ========== GENERALE FORM =========== */
+    .form__section-container{
+        padding: 3rem;
+    }
 }
+
+
 
 
 
@@ -510,7 +677,32 @@ footer ul a:hover{
 
     .posts__container{
         grid-template-columns: 1fr;
-        border-bottom: 2px;
+    }
+
+    .category__buttons-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer__container{
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* ======== BLOG ========= */
+    .search__bar-container{
+        width: var(--container-width-md);
+    }
+
+    /* =========SINGLE POST ============ */
+    .singlepost__container{
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /* ========== GENERALE FORM =========== */
+    .form__section-container{
+        padding: 0;
     }
 }
 
